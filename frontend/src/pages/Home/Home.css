@@ -1,0 +1,122 @@
+
+.card-container{
+    padding: 30px;
+    width: 1200px;
+}
+.card {
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+.upper-section {
+    display: flex;
+    gap: 15%;
+}
+
+.text-container {
+    font-weight: bold;
+}
+
+.texts {
+    text-align: center;
+}
+
+.Red-text-container {
+    color: red;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 20px;
+}
+
+.Red-Big-text-container {
+    color: red;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 30px;
+    font-weight: bold;
+    border: 0;
+}
+
+.Big-text-container {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0px;
+    margin: 0px;
+}
+
+.DisabilityIDCard {
+    width: 250px;
+    height: 50px;
+    background-color: red;
+    align-items: center;
+    background-color: red;
+    border: 0;
+    border-radius: 100px;
+    box-sizing: border-box;
+    color: white;
+    display: inline-flex;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    padding: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    vertical-align: middle;
+    font-family: "Times New Roman", "Poppins", sans-serif;
+}
+
+.middle-section {
+    margin-top: 20px;
+}
+
+.address-details p {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+}
+
+.address-details strong {
+    margin-right: 10px;
+}
+
+.lower-section {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.lower-section .left-side div {
+    color: red;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.lower-section p {
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+}
+
+.lower-section .right-side {
+    margin-top: 55px;
+    height: 20px;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.lower-section .right-side .text {
+    color: red;
+}
+
+.lowest-section {
+    background-color: red;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+}
