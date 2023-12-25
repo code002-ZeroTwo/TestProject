@@ -43,7 +43,6 @@ function Login(props) {
 
     return (
         <div className="LoginForm">
-            <h1>hello world</h1>
             <form onSubmit={submit}>
                 <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
                 <div className="">
