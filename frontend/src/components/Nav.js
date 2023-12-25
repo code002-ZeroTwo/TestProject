@@ -14,7 +14,6 @@ function Nav(props) {
         props.setLoggedin(false);
         localStorage.removeItem("access_token");
     };
-    console.log(props);
 
     if (!props.name) {
         menu = (

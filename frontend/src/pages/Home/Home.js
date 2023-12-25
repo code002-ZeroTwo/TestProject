@@ -8,36 +8,39 @@ const Home = (props) => {
     const [content, setContent] = useState({});
     const token = localStorage.getItem("access_token");
 
-
-
     useEffect(() => {
         (async () => {
-            const response = await fetch("http://localhost:8000/api/user", {
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${token}`,
-                },
-                credentials: "include",
-            });
+            try {
+                const response = await fetch("http://localhost:8000/api/user", {
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${token}`,
+                    },
+                    credentials: "include",
+                });
 
-            const content = await response.json();
-            if (response.ok) {
-                setContent(content.data);
-                console.log(content.data);
-                props.setName(content.data.name);
-                props.setLoggedin(true);
-            } else {
-                // Handle error...
-                console.error("Fetch failed:", response.statusText);
+                const content = await response.json();
+                if (response.ok) {
+                    setContent(content.data);
+                    console.log(content.data);
+                    props.setName(content.data.name);
+                    props.setLoggedin(true);
+                } else {
+                    // Handle error...
+                    throw new Error(
+                        `Error ${response.status}: ${response.statusText}`
+                    );
+                }
+
+                console.log(content);
+            } catch (error) {
+                console.log(error);
             }
-
-            console.log(content);
-
         })();
     }, []);
 
     if (!props.loggedin) {
-        console.log("is this the one in wrong")
+        console.log("is this the one in wrong");
         return <Navigate to="/login" />;
     }
 
@@ -60,7 +63,9 @@ const Home = (props) => {
                         <div className="Red-Big-text-container">
                             Office Of The Municipal Executive
                         </div>
-                        <div className="Big-text-container">Palungtar,Gorkha</div>
+                        <div className="Big-text-container">
+                            Palungtar,Gorkha
+                        </div>
                         <div className="Big-text-container">
                             Gandaki Province,Nepal
                         </div>
@@ -80,31 +85,38 @@ const Home = (props) => {
                             <strong>Address: Gandaki province</strong>
                             <strong>District: Gorkha</strong>
                             <strong>Palungtar Municipality</strong>
-                            <strong>Ward No:{content.wardno}</strong>
+                            <strong>Ward No:{content.ward}</strong>
                         </p>
                     </div>
 
                     <div className="address-details">
                         <p>
-                            <strong>Date of Birth: {content.dateofbirth}</strong>
-                            <strong>Citizenship Number:{content.citizenshipno}</strong>
+                            <strong>Date of Birth: {content.dob}</strong>
+                            <strong>
+                                Citizenship Number:{content.citizenship}
+                            </strong>
                             <strong>Sex:{content.sex} </strong>
-                            <strong>Blood Group:{content.bloodgroup}</strong>
+                            <strong>Blood Group:{content.blood_group}</strong>
                         </p>
                     </div>
 
                     <div className="address-details">
                         <p>
                             <strong>Types of disability:</strong>
-                            <strong>On the basis of nature: {content.nature}</strong>
-                            <strong>On the basis of Severity:{content.severity} </strong>
+                            <strong>
+                                On the basis of nature: {content.nature}
+                            </strong>
+                            <strong>
+                                On the basis of Severity:{content.severity}{" "}
+                            </strong>
                         </p>
                     </div>
 
                     <div className="address-details">
                         <p>
                             <strong>
-                                Father Name or Mother Name or Guardian Name: {content.guardianname}
+                                Father Name or Mother Name or Guardian Name:{" "}
+                                {content.name_of_guardian}
                             </strong>
                         </p>
                     </div>

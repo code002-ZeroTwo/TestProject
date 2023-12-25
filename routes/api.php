@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ForgetPasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +20,10 @@ use App\Http\Controllers\AuthController;
     // return $request->user();
 // });
 
-Route::get('/register',[AuthController::class, 'register']);
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
+Route::get('/user', [AuthController::class, 'user'])->middleware('auth:sanctum');
+
+Route::post('/forgot-password', [ForgetPasswordController::class, 'send_reset_password_email']);
+Route::post('/reset-password/{token}', [ForgetPasswordController::class, 'reset']);
