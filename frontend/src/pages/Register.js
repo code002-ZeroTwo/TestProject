@@ -63,7 +63,7 @@ const Register = (props) => {
     }
 
     return (
-        <div>
+        <div className="LoginForm">
             <form onSubmit={submit}>
                 <h1 className="h3 mb-3 fw-normal">Please Register</h1>
                 <div>
@@ -74,7 +74,7 @@ const Register = (props) => {
                         onChange={(e) => setName(e.target.value)}
                     />
                 </div>
-
+                <br />
                 <div>
                     <input
                         type="number"
@@ -84,6 +84,7 @@ const Register = (props) => {
                     />
                 </div>
 
+                <br />
                 <div>
                     <input
                         type="date"
@@ -95,6 +96,7 @@ const Register = (props) => {
                     />
                 </div>
 
+                <br />
                 <div>
                     <input
                         type="text"
@@ -104,6 +106,7 @@ const Register = (props) => {
                     />
                 </div>
 
+                <br />
                 <div>
                     <input
                         type="text"
@@ -113,6 +116,7 @@ const Register = (props) => {
                     />
                 </div>
 
+                <br />
                 <div>
                     <input
                         type="text"
@@ -122,6 +126,7 @@ const Register = (props) => {
                     />
                 </div>
 
+                <br />
                 <div>
                     <input
                         type="text"
@@ -130,6 +135,7 @@ const Register = (props) => {
                         onChange={(e) => setNature(e.target.value)}
                     />
                 </div>
+                <br />
                 <div>
                     <input
                         type="text"
@@ -138,6 +144,7 @@ const Register = (props) => {
                         onChange={(e) => setSeverity(e.target.value)}
                     />
                 </div>
+                <br />
                 <div>
                     <input
                         type="text"
@@ -146,6 +153,7 @@ const Register = (props) => {
                         onChange={(e) => setGuardian(e.target.value)}
                     />
                 </div>
+                <br />
                 <div>
                     <input
                         type="email"
@@ -154,6 +162,7 @@ const Register = (props) => {
                         onChange={(e) => setEmail(e.target.value)}
                     />
                 </div>
+                <br />
                 <div>
                     <input
                         type="password"
