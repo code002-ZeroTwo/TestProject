@@ -39,7 +39,7 @@ const ChangePassword = (props) => {
     }
 
     return (
-        <div>
+        <div className="LoginForm">
             <form onSubmit={submit}>
                 <div>
                     <div>
@@ -50,14 +50,18 @@ const ChangePassword = (props) => {
                             onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
-                    <input
-                        type="password"
-                        className="form-control"
-                        placeholder="confirm password"
-                        onChange={(e) => setConfirmPassword(e.target.value)}
-                    />
+                    <br />
+                    <div>
+                        <input
+                            type="password"
+                            className="form-control"
+                            placeholder="confirm password"
+                            onChange={(e) => setConfirmPassword(e.target.value)}
+                        />
+                    </div>
                 </div>
-                <button className="btn btn-primary w-100 py-2" type="submit">
+                <br />
+                <button className="btn btn-primary w-100 py-2 " type="submit">
                     change password
                 </button>
             </form>

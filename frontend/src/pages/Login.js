@@ -7,9 +7,6 @@ function Login(props) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const forgotpassword = () => {
-        return <Navigate to="/forgotpassword" />;
-    };
 
     const submit = async (e) => {
         e.preventDefault();
@@ -55,6 +52,7 @@ function Login(props) {
                         }}
                     />
                 </div>
+                <br />
 
                 <div className="">
                     <input

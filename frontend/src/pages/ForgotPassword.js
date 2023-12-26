@@ -21,8 +21,7 @@ const ForgotPassword = () => {
     }
 
     return (
-        <div>
-            <h1>hello world</h1>
+        <div className="LoginForm">
             <form onSubmit={submit}>
                 <div>
                     <input
@@ -32,11 +31,12 @@ const ForgotPassword = () => {
                         onChange={(e) => setEmail(e.target.value)}
                     />
                 </div>
+                <br />
                 <button className="btn btn-primary w-100 py-2" type="submit">
                     request password reset link
                 </button>
             </form>
-            {message && <p>{message}</p>}
+            <div>{message && <p>{message}</p>}</div>
         </div>
     );
 };
